@@ -12,6 +12,10 @@ object ArrayParameterized {
     for(i <- 0 to 1) {
       println(testString(i))
     }
+
+    for(i <- 0.to(1)) {
+      println(testString(i))
+    }
   }
 
 }
