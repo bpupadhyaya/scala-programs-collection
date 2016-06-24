@@ -3,7 +3,8 @@ package com.equalinformation.scala.programs.gui
 import scalafx.application.JFXApp
 
 /**
-  * Created by bpupadhyaya on 6/23/16.
+  * Due to: http://www.scalafx.org/
+  * Re-Created by bpupadhyaya on 6/23/16.
   */
 object SampleScalaFXApp extends JFXApp {
   //TODO check later when time available - build issue
