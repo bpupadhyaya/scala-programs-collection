@@ -11,3 +11,5 @@ libraryDependencies += "org.scalafx" %% "scalafx" % "8.0.92-R10"
 libraryDependencies += "org.scala-lang.modules" %% "scala-parser-combinators" % "1.0.4"
 
 libraryDependencies += "com.typesafe.akka" % "akka-actor_2.11" % "2.4.7"
+
+libraryDependencies += "org.scala-lang.modules" % "scala-xml_2.11" % "1.0.5"
