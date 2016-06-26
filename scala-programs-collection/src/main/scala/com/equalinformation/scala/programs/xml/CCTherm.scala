@@ -13,7 +13,7 @@ abstract class CCTherm {
   val purchasePrice: Int
   val condition: Int
 
-  override def toString = description
+  override def toString = description+","+yearMade
 
   def toXML =
     <cctherm>
@@ -25,7 +25,17 @@ abstract class CCTherm {
       <condition>{condition}</condition>
     </cctherm>
 
+  def fromXML(node: scala.xml.Node): CCTherm =
+    new CCTherm {
+      override val description = (node \ "description").text
+      override val yearMade = ( node \ "yearMade").text.toInt
+      override val dateObtained = (node \ "dateObtained").text
+      override val bookPrice = (node \ "bookPrice").text.toInt
+      override val purchasePrice = (node \ "purchasePrice").text.toInt
+      override val condition = (node \ "condition").text.toInt
+    }
 }
+
 
 object SampleXMLSerialization extends App {
   val therm = new CCTherm {
@@ -37,5 +47,8 @@ object SampleXMLSerialization extends App {
     override val condition: Int = 8
   }
 
-  println(therm.toXML)
+  val node = therm.toXML
+  println("Serialization: "+node)
+
+  println("Deserialization: "+therm.fromXML(node))
 }
