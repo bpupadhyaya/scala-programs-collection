@@ -51,4 +51,12 @@ object SampleXMLSerialization extends App {
   println("Serialization: "+node)
 
   println("Deserialization: "+therm.fromXML(node))
+
+  def identify(node: scala.xml.Node): String =
+    node match {
+      case <description>{content}</description> => "Description: "+content
+      case <yearMade>{content}</yearMade> => "Year made: "+content
+  }
+
+  println("Identification: "+identify(<description>Pattern matching</description>))
 }
