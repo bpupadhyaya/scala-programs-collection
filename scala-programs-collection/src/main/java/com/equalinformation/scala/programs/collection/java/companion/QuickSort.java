@@ -1,13 +1,17 @@
 package com.equalinformation.scala.programs.collection.java.companion;
 
+import java.util.Arrays;
+
 /**
  * Created by bpupadhyaya on 4/2/17.
- * Author : John R. Hubbard
+ * Author for Quick sort portion: John R. Hubbard, PhD
  */
 public class QuickSort {
     public static void main(String...args) {
         int[] a = {3,4,2,1,9,8,7,5,90};
         int[] b ={-3,-8,7,9,20,1};
+        int[] c ={9,3,2,1,6,-2,5};
+
         sort(a);
         sort(b);
 
@@ -21,6 +25,15 @@ public class QuickSort {
         for(int j: b) {
             System.out.print(j+", ");
         }
+
+        Arrays.sort(c);
+
+        System.out.println();
+        System.out.println("c sorted by Java library: ");
+        for(int j: c) {
+            System.out.print(j+", ");
+        }
+
 
     }
 
